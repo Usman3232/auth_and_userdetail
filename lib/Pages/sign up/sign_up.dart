@@ -63,6 +63,7 @@ class SignUp extends GetWidget<AuthController> {
                     width: SizeConfig.widthMultiplier * 100,
                     child: AuthTextInputField(
                       textEditingController: email,
+                      inputType: TextInputType.emailAddress,
                       hintSize: SizeConfig.textMultiplier * 2,
                       hintText: "john@gmail.com",
                       cursorColor: Colors.black,
@@ -74,6 +75,7 @@ class SignUp extends GetWidget<AuthController> {
                     width: SizeConfig.widthMultiplier * 100,
                     child: AuthTextInputField(
                       textEditingController: phone,
+                      inputType: TextInputType.phone,
                       hintSize: SizeConfig.textMultiplier * 2,
                       hintText: "03*********",
                       cursorColor: Colors.black,
@@ -85,6 +87,7 @@ class SignUp extends GetWidget<AuthController> {
                     width: SizeConfig.widthMultiplier * 100,
                     child: AuthTextInputField(
                       textEditingController: password,
+                      inputType: TextInputType.number,
                       hintSize: SizeConfig.textMultiplier * 2,
                       hintText: "*******",
                       // labelText: 'Password',

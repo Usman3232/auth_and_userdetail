@@ -28,7 +28,7 @@ class _Upload_imageState extends State<Upload_image> {
           width: SizeConfig.widthMultiplier * 30,
           decoration: BoxDecoration(
               shape: BoxShape.circle,
-              border: Border.all(width: 11, color: Colors.grey)),
+              border: Border.all(width: 1, color: Colors.grey)),
           child: ClipOval(
               child: images != null
                   ? Image(
@@ -48,17 +48,12 @@ class _Upload_imageState extends State<Upload_image> {
                     context: context,
                     builder: (_) => AlertDialog(
                           title: Text("Information"),
+                          shape: CircleBorder(),
                           content: Column(
                             children: [
                               GestureDetector(
                                 child: Text("Camera"),
                                 onTap: () async {
-                                  // final XFile? photo =
-                                  // await _picker.pickImage(
-                                  //     source: ImageSource.camera);
-                                  // setState(() {
-                                  //   images = File(photo!.path);
-                                  // });
                                   getImage(ImageSource.camera);
                                 },
                               ),

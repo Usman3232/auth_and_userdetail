@@ -35,14 +35,14 @@ class ForgotScreen extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                   SizedBox(height: SizeConfig.heightMultiplier * 5),
-                  TextView(text: 'Email', fontWeight: FontWeight.bold),
+                  TextView(text: 'new passward', fontWeight: FontWeight.bold),
                   SizedBox(
                     height: SizeConfig.heightMultiplier * 7,
                     width: SizeConfig.widthMultiplier * 100,
                     child: AuthTextInputField(
                       hintSize: SizeConfig.textMultiplier * 2,
-                      hintText: "john@gmail.com",
-                      // labelText: 'Password',
+                      hintText: "*******",
+                      inputType: TextInputType.number,
                       cursorColor: Colors.black,
                     ),
                   ),

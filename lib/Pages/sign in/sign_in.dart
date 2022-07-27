@@ -46,6 +46,7 @@ class Login extends GetWidget<AuthController> {
                     child: AuthTextInputField(
                       hintSize: SizeConfig.textMultiplier * 2,
                       hintText: "john@gmail.com",
+                      inputType: TextInputType.emailAddress,
                       textEditingController: email,
                       cursorColor: Colors.black,
                     ),
@@ -57,6 +58,7 @@ class Login extends GetWidget<AuthController> {
                     width: SizeConfig.widthMultiplier * 100,
                     child: AuthTextInputField(
                       hintSize: SizeConfig.textMultiplier * 2,
+                      inputType: TextInputType.number,
                       hintText: "*******",
                       textEditingController: password,
                       cursorColor: Colors.black,
