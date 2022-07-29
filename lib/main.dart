@@ -1,3 +1,4 @@
+import 'package:assinment/Pages/splash/splash.dart';
 import 'package:assinment/bindings/auth_bindings.dart';
 import 'package:assinment/root/root.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
               initialBinding: AuthBindings(),
               debugShowCheckedModeBanner: false,
               // home: SignUp(),
-              home: Root(),
+              home: Splash(),
               // home: ForgotScreen(),
             );
           },

@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:assinment/controllers/auth_controller.dart';
 import 'package:assinment/utils/size_config.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -29,53 +30,43 @@ class _Upload_imageState extends State<Upload_image> {
           decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(width: 1, color: Colors.grey)),
-          child: ClipOval(
-              child: images != null
-                  ? Image(
-                      image: FileImage(images!),
-                    )
-                  : Image.asset(
-                      "assets/img.png",
-                      fit: BoxFit.fill,
-                    )),
-        ),
-        Positioned(
-            bottom: 0,
-            right: 0,
-            child: InkWell(
-              onTap: () {
-                showDialog(
-                    context: context,
-                    builder: (_) => AlertDialog(
-                          title: Text("Information"),
-                          shape: CircleBorder(),
-                          content: Column(
-                            children: [
-                              GestureDetector(
-                                child: Text("Camera"),
-                                onTap: () async {
-                                  getImage(ImageSource.camera);
-                                },
-                              ),
-                              SizedBox(
-                                height: 50,
-                              ),
-                              GestureDetector(
-                                child: Text("Gallery"),
-                                onTap: () async {
-                                  getImage(ImageSource.gallery);
-                                },
-                              )
-                            ],
+          child: InkWell(
+            child: ClipOval(
+                child: images != null
+                    ? Image(
+                        image: FileImage(images!),
+                      )
+                    : Image.asset(
+                        "assets/uploadimage.png",
+                        fit: BoxFit.fill,
+                      )),
+            onTap: () {
+              showDialog(
+                  context: context,
+                  builder: (_) => CupertinoAlertDialog(
+                        title: Text("Choose From"),
+                        actions: [
+                          CupertinoDialogAction(
+                            child: GestureDetector(
+                              child: Text('Camera'),
+                              onTap: () {
+                                getImage(ImageSource.camera);
+                              },
+                            ),
                           ),
-                        ));
-              },
-              child: Image.asset(
-                "assets/uploadimage.png",
-                height: 40,
-                width: 40,
-              ),
-            ))
+                          CupertinoDialogAction(
+                            child: GestureDetector(
+                              child: Text('Gallery'),
+                              onTap: () {
+                                getImage(ImageSource.camera);
+                              },
+                            ),
+                          )
+                        ],
+                      ));
+            },
+          ),
+        ),
       ],
     );
   }
